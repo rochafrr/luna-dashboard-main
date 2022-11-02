@@ -42,7 +42,7 @@ export class ChartSection extends Component {
                     }
                 ]
             }
-            ,Market_Cap: {
+            , Market_Cap: {
                 options: {
                     grid: {
                         show: false
@@ -97,7 +97,7 @@ export class ChartSection extends Component {
                         y: {
                             formatter: (value) => { return value.toFixed(2) }
                         }, theme: "dark"
-                    }, 
+                    },
                 },
                 series: [
                     {
@@ -107,7 +107,7 @@ export class ChartSection extends Component {
                     }
                 ]
             }
-            
+
         };
         this.prevSelection = this.state.Price.options.selection
     }
@@ -129,14 +129,14 @@ export class ChartSection extends Component {
     }
     componentWillUnmount() {
         clearInterval(this.interval);
-      }
+    }
     componentDidUpdate() {
         if (this.prevId !== this.props.Id) {
             this.prevId = this.props.Id
             this.fetchData()
         }
         if (this.prevSelection !== this.state.Price.options.selection) {
-            this.prevSelection =this.state.Price.options.selection
+            this.prevSelection = this.state.Price.options.selection
             this.fetchData()
         }
     }
@@ -144,39 +144,39 @@ export class ChartSection extends Component {
     render() {
         return (
             <div>
-               <div className="container">
+                <div className="container">
                     <div className="row">
                         <div className="col" style={{ maxWidth: '610px' }}>
                             <div id="chart">
                                 <div className="toolbar">
-                                    <button id="one_month" 
-                                        style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99',fontfamily:'Arial',borderWidth:'1px',fontsize:'15px',fontweight:'bold',bordercolor:'#599bb3',borderTopLeftRadius:'8px',borderTopRightRadius:'8px',borderBottomLeftRadius:'8px',borderBottomRightRadius:'8px' }}
-                                        onClick={() => this.setState({ Price: { options:{...this.tooltip,selection: 1},series: this.state.Price.series }})}>
+                                    <button id="one_month"
+                                        style={{ width: '50px', color: '#fff', background: 'linear-gradient(#599bb3, #408c99', fontfamily: 'Arial', borderWidth: '1px', fontsize: '15px', fontweight: 'bold', bordercolor: '#599bb3', borderTopLeftRadius: '8px', borderTopRightRadius: '8px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}
+                                        onClick={() => this.setState({ Price: { options: { ...this.tooltip, selection: 1 }, series: this.state.Price.series } })}>
                                         1D
                                     </button>
                                     &nbsp;
                                     <button id="six_months"
-                                        style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99',fontfamily:'Arial',borderWidth:'1px',fontsize:'15px',fontweight:'bold',bordercolor:'#599bb3',borderTopLeftRadius:'8px',borderTopRightRadius:'8px',borderBottomLeftRadius:'8px',borderBottomRightRadius:'8px' }}
-                                        onClick={() => this.setState({ Price: { options:{...this.tooltip,selection: 7},series: this.state.Price.series }})}>
+                                        style={{ width: '50px', color: '#fff', background: 'linear-gradient(#599bb3, #408c99', fontfamily: 'Arial', borderWidth: '1px', fontsize: '15px', fontweight: 'bold', bordercolor: '#599bb3', borderTopLeftRadius: '8px', borderTopRightRadius: '8px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}
+                                        onClick={() => this.setState({ Price: { options: { ...this.tooltip, selection: 7 }, series: this.state.Price.series } })}>
                                         1W
                                     </button>
                                     &nbsp;
                                     <button id="one_year"
 
-style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99',fontfamily:'Arial',borderWidth:'1px',fontsize:'15px',fontweight:'bold',bordercolor:'#599bb3',borderTopLeftRadius:'8px',borderTopRightRadius:'8px',borderBottomLeftRadius:'8px',borderBottomRightRadius:'8px' }}
-                                        onClick={() => this.setState({ Price: { options:{...this.tooltip,selection: 30},series: this.state.Price.series }})}>
+                                        style={{ width: '50px', color: '#fff', background: 'linear-gradient(#599bb3, #408c99', fontfamily: 'Arial', borderWidth: '1px', fontsize: '15px', fontweight: 'bold', bordercolor: '#599bb3', borderTopLeftRadius: '8px', borderTopRightRadius: '8px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}
+                                        onClick={() => this.setState({ Price: { options: { ...this.tooltip, selection: 30 }, series: this.state.Price.series } })}>
                                         1M
                                     </button>
                                     &nbsp;
                                     <button id="ytd"
-                                        style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99',fontfamily:'Arial',borderWidth:'1px',fontsize:'15px',fontweight:'bold',bordercolor:'#599bb3',borderTopLeftRadius:'8px',borderTopRightRadius:'8px',borderBottomLeftRadius:'8px',borderBottomRightRadius:'8px' }}
-                                        onClick={() => this.setState({ Price: { options:{...this.tooltip,selection: 182},series: this.state.Price.series }})}>
+                                        style={{ width: '50px', color: '#fff', background: 'linear-gradient(#599bb3, #408c99', fontfamily: 'Arial', borderWidth: '1px', fontsize: '15px', fontweight: 'bold', bordercolor: '#599bb3', borderTopLeftRadius: '8px', borderTopRightRadius: '8px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}
+                                        onClick={() => this.setState({ Price: { options: { ...this.tooltip, selection: 182 }, series: this.state.Price.series } })}>
                                         6M
                                     </button>
                                     &nbsp;
                                     <button id="all"
-                                        style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99',fontfamily:'Arial',borderWidth:'1px',fontsize:'15px',fontweight:'bold',bordercolor:'#599bb3',borderTopLeftRadius:'8px',borderTopRightRadius:'8px',borderBottomLeftRadius:'8px',borderBottomRightRadius:'8px' }}
-                                        onClick={() => this.setState({ Price: { options:{...this.tooltip,selection: 365},series: this.state.Price.series }})}>
+                                        style={{ width: '50px', color: '#fff', background: 'linear-gradient(#599bb3, #408c99', fontfamily: 'Arial', borderWidth: '1px', fontsize: '15px', fontweight: 'bold', bordercolor: '#599bb3', borderTopLeftRadius: '8px', borderTopRightRadius: '8px', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}
+                                        onClick={() => this.setState({ Price: { options: { ...this.tooltip, selection: 365 }, series: this.state.Price.series } })}>
                                         1Y
                                     </button>
                                 </div>
@@ -185,13 +185,13 @@ style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99'
                                     series={this.state.Price.series}
                                     type="area"
                                     height='400'
-                                    width='600' />
+                                    width='500' />
                             </div>
                         </div>
                         <div className="col" style={{ maxWidth: '200px' }}>
 
                             <div className="card-body ">
-                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color:'Yellow' }}> Market Cap </h6>
+                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Market Cap </h6>
                                 <p className="card-text fw-bold "
                                     style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
                                     $ {this.props.MarketCap}
@@ -199,27 +199,27 @@ style={{width:'50px', color:'#fff',background:'linear-gradient(#599bb3, #408c99'
                             </div>
 
                             <div className="card-body ">
-                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color:'Yellow' }}> Price Change 24hrs </h6>
+                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Price Change 24hrs </h6>
                                 <p className="card-text fw-bold "
                                     style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
                                     $ {this.props.priceChange24}
                                 </p>
                             </div>
                             <div className="card-body ">
-                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color:'Yellow' }}> Total Volume </h6>
+                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Total Volume </h6>
                                 <p className="card-text fw-bold "
                                     style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
                                     $ {this.props.TotVol}
                                 </p>
                             </div>
                             <div className="card-body ">
-                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color:'Yellow' }}> Total Supply</h6>
+                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Total Supply</h6>
                                 <p className="card-text fw-bold "
                                     style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
                                     {this.props.Circulating}
                                 </p>
                             </div>
-                            
+
 
 
 
