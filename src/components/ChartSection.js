@@ -194,7 +194,7 @@ export class ChartSection extends Component {
                                 <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Market Cap </h6>
                                 <p className="card-text fw-bold "
                                     style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
-                                    $ {this.props.MarketCap}
+                                    $ {parseFloat(this.props.MarketCap).toLocaleString('pt-br', {minimumFractionDigits: 2})}
                                 </p>
                             </div>
 
@@ -209,16 +209,10 @@ export class ChartSection extends Component {
                                 <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Total Volume </h6>
                                 <p className="card-text fw-bold "
                                     style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
-                                    $ {this.props.TotVol}
+                                    $ {parseFloat(this.props.TotVol).toLocaleString('pt-br', {minimumFractionDigits: 2})}
                                 </p>
                             </div>
-                            <div className="card-body ">
-                                <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'Yellow' }}> Total Supply</h6>
-                                <p className="card-text fw-bold "
-                                    style={{ fontFamily: 'NHaasGroteskDSPro-65Md', color: 'rgb(255, 255, 255)', fontSize: 'small' }}>
-                                    {this.props.Circulating}
-                                </p>
-                            </div>
+                            
 
 
 
