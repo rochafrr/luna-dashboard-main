@@ -23,7 +23,7 @@ export  class CardSection extends Component {
                         <div className="card-body">
                             <h6 className="card-title" style={{ fontFamily: 'NHaasGroteskDSPro-65Md' }}>Total Supply</h6>
                             <p className="card-text fw-bold fs-5" style={{ color: "#006A89" }}>
-                                ${this.props.Supply}
+                                {this.props.Supply}
                             </p>
                         </div>
                     </div>
