@@ -5,8 +5,8 @@
 }
 
 body {
-  width:1400px;
-  height: 400px;
+  max-width:1400px;
+  min-height: 400px;
   padding: 50px;
   margin-left: 80px;
   background: black;
